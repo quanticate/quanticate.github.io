@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown Timer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    #timer {
+      font-size: 48px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div id="timer"></div>
+  <br>
+  <input type="number" id="duration" placeholder="Duration in minutes" min="1" step="1">
+  <br>
+  <button id="startButton">Start</button>
+  <button id="pauseButton" disabled>Pause</button>
+  <button id="stopButton" disabled>Stop</button>
+
+  <script>
+    const countdown = (durationInMinutes) => {
+      const timerElement = document.getElementById('timer');
+      const startButton = document.getElementById('startButton');
+      const pauseButton = document.getElementById('pauseButton');
+      const stopButton = document.getElementById('stopButton');
+      const durationInput = document.getElementById('duration');
+
+      let timeLeft = durationInMinutes * 60;
+      let intervalId;
+
+      const updateTimerDisplay = () => {
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft % 60;
+        timerElement.textContent = `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+      };
+
+      const startTimer = () => {
+        updateTimerDisplay();
+        intervalId = setInterval(() => {
+          timeLeft -= 1;
+          updateTimerDisplay();
+
+          if (timeLeft <= 0) {
+            clearInterval(intervalId);
+            startButton.disabled = false;
+            pauseButton.disabled = true;
+            stopButton.disabled = true;
+          }
+        }, 1000);
+        startButton.disabled = true;
+        pauseButton.disabled = false;
+        stopButton.disabled = false;
+      };
+
+      const pauseTimer = () => {
+        clearInterval(intervalId);
+        startButton.disabled = false;
+        pauseButton.disabled = true;
+        stopButton.disabled = false;
+      };
+
+      const stopTimer = () => {
+        clearInterval(intervalId);
+        timeLeft = durationInMinutes * 60;
+        updateTimerDisplay();
+        startButton.disabled = false;
+        pauseButton.disabled = true;
+        stopButton.disabled = true;
+      };
+
+      startButton.addEventListener('click', startTimer);
+      pauseButton.addEventListener('click', pauseTimer);
+      stopButton.addEventListener('click', stopTimer);
+
+      durationInput.addEventListener('change', () => {
+        const newDuration = parseInt(durationInput.value);
+        if (newDuration > 0) {
+          clearInterval(intervalId);
+          timeLeft = newDuration * 60;
+          updateTimerDisplay();
+          startButton.disabled = false;
+          pauseButton.disabled = true;
+          stopButton.disabled = true;
+        }
+      });
+
+      updateTimerDisplay();
+    };
+
+    countdown(10); // 10 minutes
+  </script>
+</body>
+</html>
