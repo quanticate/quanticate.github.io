@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exams Scheduled Today</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <style>
+    body { font-family: sans-serif; padding: 1em; }
+    table { border-collapse: collapse; width: 100%; margin-top: 1em; }
+    th, td { border: 1px solid #ccc; padding: 0.5em; text-align: left; }
+    th { background: #f4f4f4; }
+    .navigation {
+      display: flex;
+      gap: 1rem;
+      margin: 1em 0;
+      justify-content: center;
+      align-items: center;
+    }
+    .calendar-button {
+      padding: 0.5rem 1rem;
+      background: #f4f4f4;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .calendar-button:hover {
+      background: #e9e9e9;
+    }
+    .dark-mode-toggle {
+      position: fixed;
+      top: 1em;
+      right: 1em;
+      padding: 0.5em 1em;
+      border-radius: 4px;
+      cursor: pointer;
+      background: #f4f4f4;
+      border: 1px solid #ccc;
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+    }
+    .dark-mode-toggle:hover {
+      background: #e9e9e9;
+    }
+    .dark-mode-toggle svg {
+      width: 1.2em;
+      height: 1.2em;
+    }
+    .dark-mode {
+      background-color: #1a1a1a;
+      color: #ffffff;
+    }
+    .dark-mode table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 1em;
+    }
+    .dark-mode th, .dark-mode td {
+      border: 1px solid #333;
+      padding: 0.5em;
+      text-align: left;
+    }
+    .dark-mode th {
+      background: #2a2a2a;
+    }
+    .dark-mode .calendar-button, .dark-mode .dark-mode-toggle {
+      background: #2a2a2a;
+      border-color: #333;
+      color: #ffffff;
+    }
+    .dark-mode .calendar-button:hover, .dark-mode .dark-mode-toggle:hover {
+      background: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="dark-mode-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.75 4.09l-2.53 1.94l.91 3.06l-2.63-1.81l-2.63 1.81l.91-3.06l-2.53-1.94L12.44 2L9.47 4.09l1.06 2.87l-2.63 1.81l-1.06-2.87l-2.53 1.94l.92 3.06l-2.63-1.81l-2.63 1.81l.91 3.06l-2.53-1.94L0.44 12l2.73 3.73l-.81 2.63L3.4 21.4l2.63-1.81l1.06 2.87l2.53-1.94l-.92-3.06l2.63-1.81l2.63 1.81l-.91-3.06l2.53 1.94l.81 2.63l2.73-3.73L21.56 12l-2.73-3.73l.81-2.63z"/>
+    </svg>
+    Dark Mode
+  </div>
+  <h1>Exams Scheduled for <span id="today"></span></h1>
+  <div class="navigation">
+    <button onclick="showExams(-1)">Previous Day</button>
+    <button onclick="showExams(0)">Today</button>
+    <button onclick="showExams(1)">Next Day</button>
+    <div class="calendar-button" id="calendarButton">
+      <input type="text" id="calendarInput" style="display: none;">
+      <span>📅 Select Date</span>
+    </div>
+  </div>
+  <table id="exam-table">
+    <thead>
+      <tr>
+        <th>Time</th>
+        <th>Room</th>
+        <th>Board</th>
+        <th>Qual.</th>
+        <th>Component</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script>
+    let exams = [];
+
+    async function loadExams() {
+      try {
+        const response = await fetch('exams-data.json');
+        const data = await response.json();
+        exams = data.exams;
+        showExams(0); // Show today's exams by default
+      } catch (error) {
+        console.error('Error loading exam data:', error);
+        // Fallback to empty array if data fails to load
+        exams = [];
+        updateTable([]);
+      }
+    }
+
+    function updateTable(exams) {
+      const tableBody = document.querySelector('#exam-table tbody');
+      if (!tableBody) {
+        const table = document.getElementById('exam-table');
+        tableBody = document.createElement('tbody');
+        table.appendChild(tableBody);
+      }
+
+      tableBody.innerHTML = exams.map(exam => `
+        <tr>
+          <td>${exam.time}</td>
+          <td>${exam.room}</td>
+          <td>${exam.board}</td>
+          <td>${exam.qualification}</td>
+          <td>${exam.component}</td>
+        </tr>
+      `).join('');
+    }
+
+    function showExams(dateOffset) {
+      const today = new Date();
+      today.setDate(today.getDate() + dateOffset);
+      const selectedDate = today.toISOString().split('T')[0];
+
+      document.getElementById('today').textContent = 
+        today.toLocaleDateString('en-GB', { 
+          weekday: 'long', 
+          year: 'numeric', 
+          month: 'long', 
+          day: 'numeric' 
+        });
+
+      const examsForDate = exams.filter(exam => 
+        exam.date === selectedDate
+      );
+
+      updateTable(examsForDate);
+    }
+
+    window.onload = function() {
+      // Initialize calendar
+      flatpickr("#calendarInput", {
+        dateFormat: "Y-m-d",
+        onChange: function(selectedDates) {
+          if (selectedDates.length > 0) {
+            const selectedDate = selectedDates[0];
+            const dateOffset = Math.round((selectedDate - new Date()) / (1000 * 60 * 60 * 24));
+            showExams(dateOffset);
+          }
+        }
+      });
+
+      // Load exams data
+      loadExams();
+
+      // Add click handler for calendar button
+      document.getElementById('calendarButton').addEventListener('click', function() {
+        document.getElementById('calendarInput').click();
+      });
+
+      // Add dark mode toggle functionality
+      const darkModeToggle = document.querySelector('.dark-mode-toggle');
+      const body = document.body;
+    darkModeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      // Toggle the SVG icon
+      const svg = darkModeToggle.querySelector('svg');
+      svg.setAttribute('fill', body.classList.contains('dark-mode') ? '#ffffff' : 'currentColor');
+      // Save preference to localStorage
+      localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
+    });
+
+    // Check for saved preference
+    const savedMode = localStorage.getItem('darkMode');
+    if (savedMode === 'true') {
+      body.classList.add('dark-mode');
+      darkModeToggle.querySelector('svg').setAttribute('fill', '#ffffff');
+    }
+  };
+
+  // Keep original parseCSV function
+  function parseCSV(str) {
+    console.log('Parsing CSV data:', str);
+    const lines = str.trim().split('\n');
+    const headers = lines[0].split(',');
+    console.log('Headers:', headers);
+    
+    return lines.slice(1).map(line => {
+      if (!line.trim()) return null; // Skip empty lines
+      const values = line.split(',');
+      console.log('Processing line:', line, 'values:', values);
+      return headers.reduce((obj, header, index) => {
+        obj[header] = values[index];
+        return obj;
+      }, {});
+    }).filter(Boolean); // Remove any null entries
+  }
+  </script>
+</body>
+</html>

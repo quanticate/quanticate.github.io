@@ -1,0 +1,436 @@
+{
+  "exams": [
+    {
+      "date": "2025-06-09",
+      "time": "09:00",
+      "room": "F16",
+      "board": "AQA",
+      "qualification": "GCE",
+      "component": "Psychology ADV Paper 3"
+    },
+    {
+      "date": "2025-06-09",
+      "time": "09:00",
+      "room": "F16",
+      "board": "AQA",
+      "qualification": "GCE",
+      "component": "Physics ADV Paper 2"
+    },
+    {
+      "date": "2025-06-09",
+      "time": "09:00",
+      "room": "F16",
+      "board": "AQA",
+      "qualification": "GCSE",
+      "component": "Biology Paper 2 Tier H"
+    },
+    {
+      "date": "2025-06-09",
+      "time": "09:00",
+      "room": "F16",
+      "board": "AQA",
+      "qualification": "GCSE",
+      "component": "Combined Sci Trilogy Biology P2H"
+    },
+    {
+      "date": "2025-06-09",
+      "time": "09:00",
+      "room": "F16",
+      "board": "AQA",
+      "qualification": "GCSE",
+      "component": "Combined Sci Trilogy Biology P2F"
+    },
+    {
+      "date": "2025-06-09",
+      "time": "09:00",
+      "room": "Hall",
+      "board": "AQA",
+      "qualification": "GCSE",
+      "component": "Combined Sci Trilogy Biology P2H"
+    },
+    {
+      "date": "2025-06-09",
+      "time": "09:00",
+      "room": "Hall",
+      "board": "AQA",
+      "qualification": "GCSE",
+      "component": "Combined Sci Trilogy Biology P2F"
+    },
+    {
+      "date": "2025-06-09",
+      "time": "09:00",
+      "room": "S1",
+      "board": "AQA",
+      "qualification": "GCSE",
+      "component": "Combined Sci Trilogy Biology P2F"
+    },
+    {
+      "date": "2025-06-09",
+      "time": "13:30",
+      "room": "F16",
+      "board": "AQA",
+      "qualification": "GCSE",
+      "component": "Physical Education Paper 2"
+    },
+    {
+      "date": "2025-06-09",
+      "time": "13:30",
+      "room": "S1",
+      "board": "AQA",
+      "qualification": "GCSE",
+      "component": "Physical Education Paper 2"
+    },
+    {
+      "date": "2025-06-10",
+      "time": "09:00",
+      "room": "F16",
+      "board": "EDEXL",
+      "qualification": "GCE",
+      "component": "Comparative Politics-Usa"
+    },
+    {
+      "date": "2025-06-10",
+      "time": "09:00",
+      "room": "F16",
+      "board": "AQA",
+      "qualification": "GCE",
+      "component": "Chemistry ADV Paper 1"
+    },
+    {
+      "date": "2025-06-10",
+      "time": "09:00",
+      "room": "F16",
+      "board": "AQA",
+      "qualification": "GCE",
+      "component": "Polish ADV Paper 3"
+    },
+    {
+      "date": "2025-06-10",
+      "time": "09:00",
+      "room": "Hall",
+      "board": "AQA",
+      "qualification": "GCSE",
+      "component": "Spanish Listening Test Tier H"
+    },
+    {
+      "date": "2025-06-10",
+      "time": "09:00",
+      "room": "S1",
+      "board": "AQA",
+      "qualification": "GCSE",
+      "component": "Spanish Listening Test Tier F"
+    },
+    {
+      "date": "2025-06-10",
+      "time": "13:30",
+      "room": "F16",
+      "board": "OCR",
+      "qualification": "GCE",
+      "component": "Rel Stud: Philosophy of Religion Wtn"
+    },
+    {
+      "date": "2025-06-11",
+      "time": "09:00",
+      "room": "F16",
+      "board": "OCR",
+      "qualification": "GCE",
+      "component": "Comp Sci: Computer Systems Wrtn"
+    },
+    {
+      "date": "2025-06-11",
+      "time": "09:00",
+      "room": "F16",
+      "board": "EDEXL",
+      "qualification": "GCSE",
+      "component": "Calculator (F) 1MA1 3F"
+    },
+    {
+      "date": "2025-06-11",
+      "time": "09:00",
+      "room": "F16",
+      "board": "EDEXL",
+      "qualification": "GCSE",
+      "component": "Calculator (H) 1MA1 3H"
+    },
+    {
+      "date": "2025-06-11",
+      "time": "09:00",
+      "room": "F16",
+      "board": "WJEC",
+      "qualification": "GCE",
+      "component": "English Lit Component 3 Unseen Texts"
+    },
+    {
+      "date": "2025-06-11",
+      "time": "09:00",
+      "room": "Hall",
+      "board": "EDEXL",
+      "qualification": "GCSE",
+      "component": "Calculator (H) 1MA1 3H"
+    },
+    {
+      "date": "2025-06-11",
+      "time": "09:00",
+      "room": "S1",
+      "board": "EDEXL",
+      "qualification": "GCSE",
+      "component": "Calculator (F) 1MA1 3F"
+    },
+    {
+      "date": "2025-06-11",
+      "time": "09:00",
+      "room": "S1",
+      "board": "EDEXL",
+      "qualification": "GCSE",
+      "component": "Calculator (H) 1MA1 3H"
+    },
+    {
+      "date": "2025-06-12",
+      "time": "09:00",
+      "room": "Hall",
+      "board": "AQA",
+      "qualification": "GCSE",
+      "component": "Geography Paper 3"
+    },
+    {
+      "date": "2025-06-12",
+      "time": "13:30",
+      "room": "F16",
+      "board": "AQA",
+      "qualification": "L2",
+      "component": "Further Mathematics Paper 1"
+    },
+    {
+      "date": "2025-06-12",
+      "time": "13:30",
+      "room": "Hall",
+      "board": "EDEXL",
+      "qualification": "GCE",
+      "component": "Pure Mathematics 2"
+    },
+    {
+      "date": "2025-06-13",
+      "time": "09:00",
+      "room": "F16",
+      "board": "EDEXL",
+      "qualification": "GCE",
+      "component": "Energy, Exercise & CO-Ord."
+    },
+    {
+      "date": "2025-06-13",
+      "time": "09:00",
+      "room": "F16",
+      "board": "AQA",
+      "qualification": "GCSE",
+      "component": "Chemistry Paper 2 Tier H"
+    },
+    {
+      "date": "2025-06-13",
+      "time": "09:00",
+      "room": "F16",
+      "board": "AQA",
+      "qualification": "GCSE",
+      "component": "Combined Sci Trilogy Chemistry P2H"
+    },
+    {
+      "date": "2025-06-13",
+      "time": "09:00",
+      "room": "F16",
+      "board": "AQA",
+      "qualification": "GCSE",
+      "component": "Combined Sci Trilogy Chemistry P2F"
+    },
+    {
+      "date": "2025-06-13",
+      "time": "09:00",
+      "room": "Hall",
+      "board": "AQA",
+      "qualification": "GCSE",
+      "component": "Combined Sci Trilogy Chemistry P2H"
+    },
+    {
+      "date": "2025-06-13",
+      "time": "09:00",
+      "room": "Hall",
+      "board": "AQA",
+      "qualification": "GCSE",
+      "component": "Combined Sci Trilogy Chemistry P2F"
+    },
+    {
+      "date": "2025-06-13",
+      "time": "09:00",
+      "room": "S1",
+      "board": "AQA",
+      "qualification": "GCSE",
+      "component": "Combined Sci Trilogy Chemistry P2F"
+    },
+    {
+      "date": "2025-06-13",
+      "time": "13:30",
+      "room": "F16",
+      "board": "AQA",
+      "qualification": "GCE",
+      "component": "Sociology ADV Paper 3"
+    },
+    {
+      "date": "2025-06-16",
+      "time": "09:00",
+      "room": "F16",
+      "board": "AQA",
+      "qualification": "GCE",
+      "component": "Chemistry ADV Paper 2"
+    },
+    {
+      "date": "2025-06-16",
+      "time": "09:00",
+      "room": "F16",
+      "board": "AQA",
+      "qualification": "GCSE",
+      "component": "Physics Paper 2 Tier H"
+    },
+    {
+      "date": "2025-06-16",
+      "time": "09:00",
+      "room": "F16",
+      "board": "AQA",
+      "qualification": "GCSE",
+      "component": "Combined Sci Trilogy Physics P2H"
+    },
+    {
+      "date": "2025-06-16",
+      "time": "09:00",
+      "room": "F16",
+      "board": "AQA",
+      "qualification": "GCSE",
+      "component": "Combined Sci Trilogy Physics P2F"
+    },
+    {
+      "date": "2025-06-16",
+      "time": "09:00",
+      "room": "Hall",
+      "board": "AQA",
+      "qualification": "GCSE",
+      "component": "Combined Sci Trilogy Physics P2H"
+    },
+    {
+      "date": "2025-06-16",
+      "time": "09:00",
+      "room": "Hall",
+      "board": "AQA",
+      "qualification": "GCSE",
+      "component": "Combined Sci Trilogy Physics P2F"
+    },
+    {
+      "date": "2025-06-16",
+      "time": "09:00",
+      "room": "S1",
+      "board": "AQA",
+      "qualification": "GCSE",
+      "component": "Combined Sci Trilogy Physics P2F"
+    },
+    {
+      "date": "2025-06-16",
+      "time": "13:30",
+      "room": "F16",
+      "board": "OCR",
+      "qualification": "GCSE",
+      "component": "Music: Listening and Appraising-Wtn"
+    },
+    {
+      "date": "2025-06-17",
+      "time": "09:00",
+      "room": "F16",
+      "board": "AQA",
+      "qualification": "GCE",
+      "component": "Physics ADV P3 Sections A & B Opt D"
+    },
+    {
+      "date": "2025-06-17",
+      "time": "09:00",
+      "room": "F16",
+      "board": "AQA",
+      "qualification": "GCSE",
+      "component": "Spanish Writing Test Tier H"
+    },
+    {
+      "date": "2025-06-17",
+      "time": "09:00",
+      "room": "F16",
+      "board": "AQA",
+      "qualification": "GCSE",
+      "component": "Spanish Writing Test Tier F"
+    },
+    {
+      "date": "2025-06-17",
+      "time": "13:30",
+      "room": "F16",
+      "board": "OCR",
+      "qualification": "GCE",
+      "component": "Rel Stud: Religion and Ethics Wtn"
+    },
+    {
+      "date": "2025-06-17",
+      "time": "13:30",
+      "room": "F16",
+      "board": "AQA",
+      "qualification": "GCSE",
+      "component": "Food Prep and Nutrition Written"
+    },
+    {
+      "date": "2025-06-18",
+      "time": "09:00",
+      "room": "Hall",
+      "board": "OCR",
+      "qualification": "GCE",
+      "component": "Comp Sci: Algrthms & Prgrming Wrtn"
+    },
+    {
+      "date": "2025-06-18",
+      "time": "09:00",
+      "room": "Hall",
+      "board": "EDEXL",
+      "qualification": "GCE",
+      "component": "General & Practical Apps."
+    },
+    {
+      "date": "2025-06-18",
+      "time": "09:00",
+      "room": "Hall",
+      "board": "AQA",
+      "qualification": "GCSE",
+      "component": "Design and Technology Written Paper"
+    },
+    {
+      "date": "2025-06-18",
+      "time": "13:30",
+      "room": "F16",
+      "board": "AQA",
+      "qualification": "L2",
+      "component": "Further Mathematics Paper 2"
+    },
+    {
+      "date": "2025-06-19",
+      "time": "13:30",
+      "room": "F16",
+      "board": "EDEXL",
+      "qualification": "GCE",
+      "component": "Statistics & Mechanics"
+    },
+    {
+      "date": "2025-06-20",
+      "time": "09:00",
+      "room": "F16",
+      "board": "OCR",
+      "qualification": "GCE",
+      "component": "Rel Stud: Dvlpmnts Chrstn Thght Wtn"
+    },
+    {
+      "date": "2025-06-20",
+      "time": "09:00",
+      "room": "F16",
+      "board": "AQA",
+      "qualification": "GCE",
+      "component": "Chemistry ADV Paper 3"
+    }
+  ]
+}
